@@ -1,9 +1,8 @@
 public class Needle {
     private int usSize;
-    private int mmSize;
+    private double mmSize;
     private String material;
     private boolean inUse;
-    private String idNumber;
 
     public int getUsSize() {
         return usSize;
@@ -13,11 +12,11 @@ public class Needle {
         this.usSize = usSize;
     }
 
-    public int getMmSize() {
+    public double getMmSize() {
         return mmSize;
     }
 
-    public void setMmSize(int mmSize) {
+    public void setMmSize(double mmSize) {
         this.mmSize = mmSize;
     }
 
@@ -37,10 +36,16 @@ public class Needle {
         this.inUse = inUse;
     }
 
-    public Needle(int usSize, int mmSize, String material, boolean inUse) {
+    public Needle(int usSize, double mmSize, String material, boolean inUse) {
         this.usSize = usSize;
         this.mmSize = mmSize;
         this.material = material;
         this.inUse = inUse;
+    }
+
+    public Needle(int usSize, double mmSize, String material) {
+        this.usSize = usSize;
+        this.mmSize = mmSize;
+        this.material = material;
     }
 }

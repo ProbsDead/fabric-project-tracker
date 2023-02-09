@@ -1,5 +1,6 @@
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Yarn {
     private String color;
@@ -47,5 +48,10 @@ public class Yarn {
         this.inUse = inUse;
     }
 
+    public Yarn(String color, String weight, int gramsAvailable) {
+        this.color = color;
+        this.weight = weight;
+        this.gramsAvailable = gramsAvailable;
+    }
 
 }

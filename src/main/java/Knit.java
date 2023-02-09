@@ -9,8 +9,14 @@ public class Knit extends Needle{
         isRound = round;
     }
 
-    public Knit(int usSize, int mmSize, String material, boolean inUse, boolean isRound) {
+    public Knit(int usSize, double mmSize, String material, boolean inUse, boolean isRound) {
         super(usSize, mmSize, material, inUse);
         this.isRound = isRound;
     }
+
+    public Knit(int usSize, double mmSize, String material, boolean isRound) {
+        super(usSize, mmSize, material);
+        this.isRound = isRound;
+    }
+
 }
