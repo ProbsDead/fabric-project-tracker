@@ -1,5 +1,7 @@
-public class Knit extends Needle{
+public class Knit extends Needle implements IdNumber{
+    private String type = "Knit";
     private boolean isRound;
+    private String idNumber;
 
     public boolean isRound() {
         return isRound;
@@ -17,6 +19,10 @@ public class Knit extends Needle{
     public Knit(int usSize, double mmSize, String material, boolean isRound) {
         super(usSize, mmSize, material);
         this.isRound = isRound;
+    }
+
+    public String setIdNumber(){
+        return "holding place";
     }
 
 }

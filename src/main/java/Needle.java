@@ -1,3 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.List;
+
 public class Needle {
     private int usSize;
     private double mmSize;
@@ -47,5 +53,24 @@ public class Needle {
         this.usSize = usSize;
         this.mmSize = mmSize;
         this.material = material;
+    }
+
+    public void writeToFile(List<Needle> needleToAdd){
+        File needle = new File("TextFiles/Needle.txt");
+
+        try(PrintWriter dataOutput = new PrintWriter(new FileOutputStream(needle, true))){
+            int counter = 0;
+            while(counter < needleToAdd.size()){
+                dataOutput.println("\n");
+                dataOutput.println(needleToAdd.get(counter).getUsSize());
+                dataOutput.println(needleToAdd.get(counter).getMmSize());
+                dataOutput.println(needleToAdd.get(counter).getMaterial());
+                dataOutput.println(needleToAdd.get(counter).isInUse());
+                dataOutput.println("\n");
+                counter++;
+            }
+        }catch(FileNotFoundException ex){
+            System.out.println("File Not Found");
+        }
     }
 }
