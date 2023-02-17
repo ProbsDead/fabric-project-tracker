@@ -1,4 +1,8 @@
+import java.io.PrintWriter;
+
 public class Menu {
+
+    private PrintWriter out;
 
     public Menu(){}
 

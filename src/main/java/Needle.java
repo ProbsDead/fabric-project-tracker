@@ -2,19 +2,23 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.sql.SQLOutput;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Needle {
-    private int usSize;
+    private String usSize;
     private double mmSize;
     private String material;
     private boolean inUse;
 
-    public int getUsSize() {
+    public String getUsSize() {
         return usSize;
     }
 
-    public void setUsSize(int usSize) {
+    public void setUsSize(String usSize) {
         this.usSize = usSize;
     }
 
@@ -42,35 +46,55 @@ public class Needle {
         this.inUse = inUse;
     }
 
-    public Needle(int usSize, double mmSize, String material, boolean inUse) {
+    public Needle(String usSize, double mmSize, String material, boolean inUse) {
         this.usSize = usSize;
         this.mmSize = mmSize;
         this.material = material;
         this.inUse = inUse;
     }
 
-    public Needle(int usSize, double mmSize, String material) {
+    public Needle(String usSize, double mmSize, String material) {
         this.usSize = usSize;
         this.mmSize = mmSize;
         this.material = material;
     }
 
-    public void writeToFile(List<Needle> needleToAdd){
-        File needle = new File("TextFiles/Needle.txt");
 
-        try(PrintWriter dataOutput = new PrintWriter(new FileOutputStream(needle, true))){
-            int counter = 0;
-            while(counter < needleToAdd.size()){
-                dataOutput.println("\n");
-                dataOutput.println(needleToAdd.get(counter).getUsSize());
-                dataOutput.println(needleToAdd.get(counter).getMmSize());
-                dataOutput.println(needleToAdd.get(counter).getMaterial());
-                dataOutput.println(needleToAdd.get(counter).isInUse());
-                dataOutput.println("\n");
-                counter++;
-            }
-        }catch(FileNotFoundException ex){
+//  UNUSED METHOD REEVALUATE LATER
+//    public void writeToFile(List<Needle> needleToAdd) {
+//        File needle = new File("TextFiles/Needle.txt");
+//
+//        try (PrintWriter dataOutput = new PrintWriter(new FileOutputStream(needle, true))) {
+//            int counter = 0;
+//            while (counter < needleToAdd.size()) {
+//                dataOutput.println("\n");
+//                dataOutput.println(needleToAdd.get(counter).getUsSize());
+//                dataOutput.println(needleToAdd.get(counter).getMmSize());
+//                dataOutput.println(needleToAdd.get(counter).getMaterial());
+//                dataOutput.println(needleToAdd.get(counter).isInUse());
+//                dataOutput.println("\n");
+//                counter++;
+//            }
+//        } catch (FileNotFoundException ex) {
+//            System.out.println("File Not Found");
+//        }
+//    }
+
+
+    public void addNeedleToFile() {
+        File yarn = new File("TextFiles/Yarn.txt");
+        Date date = new Date();
+        SimpleDateFormat dateTime = new SimpleDateFormat("MM/dd/yyy hh:mm:ss aa");
+        String stringDate = dateTime.format(date);
+        try (PrintWriter dataOutput = new PrintWriter(new FileOutputStream(yarn, true))) {
+            Scanner input = new Scanner(System.in);
+            String userInput = input.nextLine();
+
+
+        } catch (FileNotFoundException ex) {
             System.out.println("File Not Found");
         }
     }
 }
+
+

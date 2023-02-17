@@ -1,0 +1,10 @@
+size conversions will now happen in their respective sub classes
+
+Write to file will also happen in their respective class I need to figure out how
+to build that method in the super class to be overrideable without having to repeat
+a bunch of code
+
+How does input and output work with inheritance?
+
+
+
