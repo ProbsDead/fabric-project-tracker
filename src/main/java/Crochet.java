@@ -24,6 +24,12 @@ public class Crochet extends Needle implements IdNumber{
         return "holding place";
     }
 
+/* This method receives input and writes to a file to save the input
+* I am considering splitting this into two separate methods and building
+* user input into an Object in one and then writing to the file in another
+* I think that when this gets transitioned to a DB it will be a smoother
+* transition*/
+
     public void addNeedleToFile() {
         File yarn = new File("TextFiles/Crochet.txt");
         Date date = new Date();
@@ -42,7 +48,7 @@ public class Crochet extends Needle implements IdNumber{
         }
     }
 
-
+//This method converts input us sizing to mm sizing
     public double usToMmConverter(String usSize){
         switch(usSize){
             case "B-1":

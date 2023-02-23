@@ -103,29 +103,3 @@ public class Yarn implements IdNumber {
 
 
 }
-
-
-
- /*   THIS IS OLD CODE I DIDN'T WANT TO DELETE YET
-
-    public void writeToFile(List<Yarn> yarnToAdd){
-        File yarn = new File("TextFiles/Yarn.txt");
-
-        try(PrintWriter dataOutput = new PrintWriter(new FileOutputStream(yarn, true))){
-            int counter = 0;
-            while(counter < yarnToAdd.size()){
-                dataOutput.println(yarnToAdd.get(counter).getColor());
-                dataOutput.println((yarnToAdd.get(counter).getSpecificColor()));
-                dataOutput.println(yarnToAdd.get(counter).getWeight());
-                dataOutput.println(yarnToAdd.get(counter).getGramsAvailable());
-                dataOutput.println(yarnToAdd.get(counter).isInUse());
-                dataOutput.println("\n");
-                counter++;
-            }
-        }catch(FileNotFoundException ex){
-            System.out.println("File Not Found");
-        }
-    }
-
-
-*/
