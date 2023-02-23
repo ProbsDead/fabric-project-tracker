@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Knit extends Needle implements IdNumber{
     private String type = "Knit";
@@ -28,6 +29,7 @@ public class Knit extends Needle implements IdNumber{
         super(usSize, mmSize, material);
         this.isRound = isRound;
     }
+    public Knit(){}
 
     public String setIdNumber(){
         return "holding place";
@@ -35,30 +37,28 @@ public class Knit extends Needle implements IdNumber{
 
 // UNFINISHED ADD TO FILE METHOD NEED TO FIGURE OUT WHAT CAN BE INHERITED FROM SUPERCLASS
     public void addNeedleToFile() {
-        File yarn = new File("TextFiles/Yarn.txt");
+        File yarn = new File("TextFiles/Knit.txt");
         Date date = new Date();
         SimpleDateFormat dateTime = new SimpleDateFormat("MM/dd/yyy hh:mm:ss aa");
         String stringDate = dateTime.format(date);
         try (PrintWriter dataOutput = new PrintWriter(new FileOutputStream(yarn, true))) {
             Scanner input = new Scanner(System.in);
-            String userInput = input.nextLine();
-
-
-            if (userInput.equalsIgnoreCase("Needle")){
-                System.out.println("Please enter needle US size: ");
-                dataOutput.println("US Size: " + input.nextLine());
-                dataOutput.println("mm Size: " + usToMmConverter(input.nextLine()));
-                System.out.println("Please enter the needle material: ");
-                dataOutput.println("Material: " + input.nextLine());
-                System.out.println("Is this a Crochet ");
-
-
-
-            }
-
+            System.out.println("Please enter needle US size: ");
+            dataOutput.println("Needles added: " + stringDate + "US Size: " + input.nextLine());
+            dataOutput.println("mm Size: " + usToMmConverter(input.nextLine()));
+            System.out.println("Please enter the needle material: ");
+            dataOutput.println("Material: " + input.nextLine());
+            System.out.println("Round (Y/N): ");
+            dataOutput.println("Round: " + input.nextLine());
+            System.out.println("Your needles have been added to the list!");
         } catch (FileNotFoundException ex) {
             System.out.println("File Not Found");
         }
+    }
+    Scanner input = new Scanner(System.in);
+    public void buildObjectFromUserInput(Scanner Input){
+        Knit newKnit = new Knit();
+        newKnit.setUsSize(input.nextLine());
     }
 
 

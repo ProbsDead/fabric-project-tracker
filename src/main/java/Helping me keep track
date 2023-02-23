@@ -6,5 +6,8 @@ a bunch of code
 
 How does input and output work with inheritance?
 
+Do I want to build two separate methods one for reading and building into an
+object and one for writing.  It seems that would follow the rules of
+encapsulation more and would make it easier to make changes down the road.
 
 

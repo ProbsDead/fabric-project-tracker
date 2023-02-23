@@ -86,21 +86,15 @@ public class Yarn implements IdNumber {
         String stringDate = dateTime.format(date);
         try(PrintWriter dataOutput = new PrintWriter(new FileOutputStream(yarn, true))){
             Scanner input = new Scanner(System.in);
-            String userInput = input.nextLine();
-
-                if (userInput.equalsIgnoreCase("Yarn")) {
-                    System.out.println("Please enter the overall color of yarn: ");
-                    dataOutput.println("Yarn added: " + stringDate + "\n" + "Color Group: " + input.nextLine());
-                    System.out.println("Please enter the manufacture color name: ");
-                    dataOutput.println("Manufacturer Color Name: " + input.nextLine());
-                    System.out.println("Please enter the yarn weight: ");
-                    dataOutput.println("Weight: " + input.nextLine());
-                    System.out.println("Please enter the amount of yarn in grams (whole numbers only): ");
-                    dataOutput.println("Grams: " + input.nextLine() + "\n");
-                    System.out.println("Your yarn has been added to the list!\n");
-                }else {
-                    System.out.println("Sorry. That was an invalid input. Please try again.\n");
-                }
+            System.out.println("Please enter the overall color of yarn: ");
+            dataOutput.println("Yarn added: " + stringDate + "\n" + "Color Group: " + input.nextLine());
+            System.out.println("Please enter the manufacture color name: ");
+            dataOutput.println("Manufacturer Color Name: " + input.nextLine());
+            System.out.println("Please enter the yarn weight: ");
+            dataOutput.println("Weight: " + input.nextLine());
+            System.out.println("Please enter the amount of yarn in grams (whole numbers only): ");
+            dataOutput.println("Grams: " + input.nextLine() + "\n");
+            System.out.println("Your yarn has been added to the list!\n");
 
         }catch (FileNotFoundException ex){
             System.out.println("File Not Found");

@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLOutput;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -58,43 +59,21 @@ public class Needle {
         this.mmSize = mmSize;
         this.material = material;
     }
-
-
-//  UNUSED METHOD REEVALUATE LATER
-//    public void writeToFile(List<Needle> needleToAdd) {
-//        File needle = new File("TextFiles/Needle.txt");
-//
-//        try (PrintWriter dataOutput = new PrintWriter(new FileOutputStream(needle, true))) {
-//            int counter = 0;
-//            while (counter < needleToAdd.size()) {
-//                dataOutput.println("\n");
-//                dataOutput.println(needleToAdd.get(counter).getUsSize());
-//                dataOutput.println(needleToAdd.get(counter).getMmSize());
-//                dataOutput.println(needleToAdd.get(counter).getMaterial());
-//                dataOutput.println(needleToAdd.get(counter).isInUse());
-//                dataOutput.println("\n");
-//                counter++;
-//            }
-//        } catch (FileNotFoundException ex) {
-//            System.out.println("File Not Found");
-//        }
-//    }
-
+    public Needle(){}
 
     public void addNeedleToFile() {
-        File yarn = new File("TextFiles/Yarn.txt");
-        Date date = new Date();
-        SimpleDateFormat dateTime = new SimpleDateFormat("MM/dd/yyy hh:mm:ss aa");
-        String stringDate = dateTime.format(date);
-        try (PrintWriter dataOutput = new PrintWriter(new FileOutputStream(yarn, true))) {
-            Scanner input = new Scanner(System.in);
-            String userInput = input.nextLine();
-
-
-        } catch (FileNotFoundException ex) {
-            System.out.println("File Not Found");
+        System.out.println("Is this a (C)rochet hook or (K)nitting needle: ");
+        Scanner input = new Scanner(System.in);
+        String userInput = input.nextLine();
+        if (userInput.equalsIgnoreCase("c")) {
+            Crochet crochet = new Crochet();
+            crochet.addNeedleToFile();
+        } else if (userInput.equalsIgnoreCase("k")) {
+            Knit knit = new Knit();
+            knit.addNeedleToFile();
         }
     }
+
 }
 
 

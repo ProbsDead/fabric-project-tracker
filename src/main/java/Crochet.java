@@ -1,3 +1,11 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
 public class Crochet extends Needle implements IdNumber{
     private String type = "Crochet";
     private String idNumber;
@@ -10,11 +18,29 @@ public class Crochet extends Needle implements IdNumber{
         super(usSize, mmSize, material);
     }
 
+    public Crochet(){}
+
     public String setIdNumber(){
         return "holding place";
     }
 
-
+    public void addNeedleToFile() {
+        File yarn = new File("TextFiles/Crochet.txt");
+        Date date = new Date();
+        SimpleDateFormat dateTime = new SimpleDateFormat("MM/dd/yyy hh:mm:ss aa");
+        String stringDate = dateTime.format(date);
+        try (PrintWriter dataOutput = new PrintWriter(new FileOutputStream(yarn, true))) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Please enter needle US size: ");
+            dataOutput.println("Needles added: " + stringDate + "US Size: " + input.nextLine());
+            dataOutput.println("mm Size: " + usToMmConverter(input.nextLine()));
+            System.out.println("Please enter the needle material: ");
+            dataOutput.println("Material: " + input.nextLine());
+            System.out.println("Your needles have been added to the list!");
+        } catch (FileNotFoundException ex) {
+            System.out.println("File Not Found");
+        }
+    }
 
 
     public double usToMmConverter(String usSize){

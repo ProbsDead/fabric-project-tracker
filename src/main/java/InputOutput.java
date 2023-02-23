@@ -6,6 +6,7 @@ public class InputOutput {
      Scanner input = new Scanner(System.in);
      Yarn inputYarn = new Yarn();
      InventoryAdd mainAdd = new InventoryAdd();
+     Needle inputNeedle = new Needle();
 
 
     public void run(){
@@ -16,11 +17,14 @@ public class InputOutput {
         while (running){
 
             menuChoices.menu(MAIN_MENU_CHOICES);
-            String choice = input.next();
+            String choice = input.nextLine();
             if(choice.equals("1")){
-                System.out.println("Welcome! Please input what you would like to add to your Inventory: Yarn or Needles");
-                inputYarn.addYarnToFile();
-
+                System.out.println("Welcome! Please input what you would like to add to your Inventory: (Y)arn or (N)eedles");
+                if(input.nextLine().equalsIgnoreCase("y")){
+                    inputYarn.addYarnToFile();
+                } else if (input.nextLine().equalsIgnoreCase("n")){
+                    inputNeedle.addNeedleToFile();
+                }
             } else if(choice.equals("2")){
 
             }else if(choice.equals("3")){
