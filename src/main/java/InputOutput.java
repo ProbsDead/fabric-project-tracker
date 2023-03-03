@@ -1,7 +1,11 @@
+import model.Needle;
+import model.Yarn;
+import org.apache.commons.dbcp2.BasicDataSource;
+
 import java.util.Scanner;
 
 public class InputOutput {
-    private static final String[] MAIN_MENU_CHOICES = {"Input Yarn/Needles", "Retrieve Yarn/Needles", "Print Stock", "Exit"};
+    private static final String[] MAIN_MENU_CHOICES = {"Input model.Yarn/Needles", "Retrieve model.Yarn/Needles", "Print Stock", "Exit"};
 
      Scanner input = new Scanner(System.in);
      Yarn inputYarn = new Yarn();
@@ -41,6 +45,10 @@ public class InputOutput {
 
 
     public static void main(String[] args) {
+        BasicDataSource dataSource = new BasicDataSource();
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/Yarn");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("postgres1");
         InputOutput runMethod = new InputOutput();
         runMethod.run();
     }

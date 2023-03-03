@@ -1,12 +1,18 @@
-Yarn added: 02/15/2023 09:53:16 PM
+model.Yarn added: 02/15/2023 09:53:16 PM
 Color Group: Blue
 Manufacturer Color Name: Bowling Alley Shoelace
 Weight: Worsted
 Grams: 200
 
-Yarn added: 02/22/2023 10:32:26 PM
+model.Yarn added: 02/22/2023 10:32:26 PM
 Color Group: blue
 Manufacturer Color Name: glazed skyburns
 Weight: worsted
 Grams: 200
+
+model.Yarn added: 02/23/2023 09:49:19 AM
+Color Group: blue
+Manufacturer Color Name: blue lagoon
+Weight: bulky
+Grams: 300
 

@@ -1,5 +1,6 @@
-import java.io.File;
-import java.io.PrintWriter;
+import model.Needle;
+import model.Yarn;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class InventoryAdd {
 
     public void addInventory(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Welcome! Please input what you would like to add to your Inventory: Yarn or Needles");
+        System.out.println("Welcome! Please input what you would like to add to your Inventory: model.Yarn or Needles");
         String userInput = input.nextLine();
 
          if (userInput.equalsIgnoreCase("Needles")) {
@@ -22,16 +23,16 @@ public class InventoryAdd {
              double mmSize = Double.parseDouble(input.nextLine());
              System.out.println("Please enter the needle material: ");
              String material = input.nextLine();
-             System.out.println("Is this a Crochet needle or a Knitting needle? (Only enter either Crochet or Knit)");
+             System.out.println("Is this a model.Crochet needle or a Knitting needle? (Only enter either model.Crochet or model.Knit)");
              String needleType = input.nextLine();
-//            if (needleType.equalsIgnoreCase("Knit")){
+//            if (needleType.equalsIgnoreCase("model.Knit")){
 //                System.out.println("Is this needle in the round? (true/false)");
 //                Boolean isRound = input.nextBoolean();
-//                Needle newKnit = new Knit(usSize, mmSize, material, isRound);
+//                model.Needle newKnit = new model.Knit(usSize, mmSize, material, isRound);
 //                needleToAdd.add(newKnit);
 //                newKnit.writeToFile(needleToAdd);
-//            } else if (needleType.equalsIgnoreCase("Crochet")) {
-//                Needle newCrochet = new Crochet(usSize, mmSize, material);
+//            } else if (needleType.equalsIgnoreCase("model.Crochet")) {
+//                model.Needle newCrochet = new model.Crochet(usSize, mmSize, material);
 //                needleToAdd.add(newCrochet);
 //                newCrochet.writeToFile(needleToAdd);
 //            } else {

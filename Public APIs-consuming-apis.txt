@@ -1,0 +1,23 @@
+With API week coming up next week, here are some free public APIs you may enjoy sharing with your students:
+
+HTTP://API.SHOUTCLOUD.IO/V1/SHOUT (good basic demo that switches anything you POST to it into ALL CAPS)
+http://deckofcardsapi.com (might tie in well with earlier deck of cards demos)
+
+Two "reflective" APIs that are good for testing HTTP requests of various types:
+https://httpbin.org
+https://httpstat.us/
+
+Fun (Pokemon, Star Wars, Harry Potter)
+https://pokeapi.co
+https://swapi.dev/
+https://wizard-world-api.herokuapp.com/swagger/index.html
+
+Potentially useful for side projects or capstones
+https://date.nager.at/Api (list public holidays for any country and year)
+https://api.dictionaryapi.dev/api/v2/entries/en/<word>
+https://quickchart.io/documentation/ (create charts and graphs from POSTed data)
+https://goqr.me/api/doc/create-qr-code/ (create QR codes for any text or url)
+
+All of those APIs are open and don't require any kind of key or authentication. A couple more free APIs with interesting data that require registering for a free key are:
+https://www.nps.gov/subjects/developer/api-documentation.htm (National Park Service)
+https://fdc.nal.usda.gov/api-guide.html (USDA food data)
